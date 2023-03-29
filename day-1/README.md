@@ -51,3 +51,9 @@ teremos um output parecido com
 
     NAME             READY   STATUS    RESTARTS   AGE
     giropops-nginx   1/1     Running   0          4m25s
+
+tendo feito tudo isso agora podemos deletar todos os recursos criados
+
+    k delete pods giropops-nginx
+
+    kind delete cluster --name giropops

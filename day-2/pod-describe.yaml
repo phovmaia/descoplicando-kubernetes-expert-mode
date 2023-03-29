@@ -1,0 +1,51 @@
+Name:             giropops-nginx
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             giropops-worker2/172.18.0.3
+Start Time:       Mon, 27 Mar 2023 15:57:26 -0300
+Labels:           run=giropops-nginx
+Annotations:      <none>
+Status:           Running
+IP:               10.244.3.3
+IPs:
+  IP:  10.244.3.3
+Containers:
+  giropops-nginx:
+    Container ID:   containerd://eff6b6d5e012ca3270b5de3658e9fab6e95ef40916c01b80dfda6b56ff271efe
+    Image:          nginx
+    Image ID:       docker.io/library/nginx@sha256:f4e3b6489888647ce1834b601c6c06b9f8c03dee6e097e13ed3e28c01ea3ac8c
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Mon, 27 Mar 2023 15:57:28 -0300
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-5qfz5 (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-5qfz5:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  43s   default-scheduler  Successfully assigned default/giropops-nginx to giropops-worker2
+  Normal  Pulling    42s   kubelet            Pulling image "nginx"
+  Normal  Pulled     41s   kubelet            Successfully pulled image "nginx" in 1.055974905s
+  Normal  Created    41s   kubelet            Created container giropops-nginx
+  Normal  Started    41s   kubelet            Started container giropops-nginx
